@@ -1,0 +1,47 @@
+En lugar de guardad la edad y la antiguedad, es mejor guardar la fecha de nacimiento y la de ingreso. ¿Por qué?
+Porque los datos de la base se van a a ir actualizando y como eso ocurre necesitamos columnas en la tabla que nos permitan tener la info actualizada.
+Lo calculable va en la informacion que me permite transformar la info que necesito
+eS UNA BUENA PRACTICA QUE LAS COLUMNAS QUE VOY A RELACIONAR SE LLAMEN IGUAL
+
+
+Alter: alterar el contenido de una tabla
+Drop: eliminar una columna de la tabla
+
+
+CONSULTAS DE SELECCION
+SELECT * FROM
+
+
+As: lo voy a mostrar como
+No me cambia la estructura de la tabla, hace la seleccion de la tabla y a las columnas le ponen un nuevo nombre
+El alias me lo muestra de otra forma
+Select ID_Artista As ID From Artistas
+Me crea una tabla con la columna ID exportando los IDs de <artistas
+
+
+Select * From (puedo buscar en toda la tabla)
+
+
+Select *, Venta / 100 As VentaUSD From Obras
+Lo que esta consulta va a hacer es agregar una columna mas llamada venta USD con el precio dolarizado
+Lo agrega virtualmente en memoria
+Si no le pongo el alias por defecto le va a poner uno random
+
+
+Year(FechaInicio) as AñoInicio
+Me busca la fecha
+Son funciones que nos ayudan en las consultas de seleccion
+
+
+Select *, Apellidos + ', ' + Nombre '(' + Pseudonimo +  ')' Artista from Artistas
+Me concatena apellido y nombre para mostrarlo como pseudonimo
+
+----------
+Select Nombres, Apellidos, (y si tiene pseudonimo mostrarlo y si no tiene mostrarlo como desconocido)
+IsNull(Pseudonimo, 'Anonimo') as Pseudonimo From Artistas
+
+----------
+
+Con null no puedo hacer ninguna operacion
+----------
+
